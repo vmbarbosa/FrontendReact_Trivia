@@ -16,13 +16,17 @@ class Fruta extends React.Component {
     this.setState({
       amount: this.state.amount + 1 
     })
+    this.props.bus((this.state.amount + 1)*this.props.price)
   }
 
   remove = () => {
     this.setState({
       amount: this.state.amount - 1 
     })
+    this.props.bus((this.state.amount - 1)*this.props.price)
   }
+
+
 
   render() {
     return (
